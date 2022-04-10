@@ -24,11 +24,24 @@ class Blockchain {
             if(block.lastHash!==lastBlock.hash || block.hash!==Block.blockHash(block)){
                 return false;
             }
-
           
       }
       return true;
   }
+
+  replaceChain(newChain){
+      if(newChain.length<this.chain.length){
+          console.log("The incoming chain is not longer than the current chain");
+          return;
+      }
+      if(!this.isChainValidate(newChain)){
+          console.log("The incoming chain is not valid");
+          return;
+      }
+      console.log("Replacing the current chain with the incoming chain");
+      this.chain = newChain;
+  }
+  
 }
 
 module.exports = Blockchain;
