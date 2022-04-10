@@ -1,4 +1,4 @@
-const Block =  require("./block");
+const Block =  require("../block");
 var expect = require('chai').expect;
 
 //break the test into components 
