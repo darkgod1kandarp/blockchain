@@ -39,9 +39,10 @@ describe("Blockchain", () => {
     const data = "kandarp";
     blockchain2.addBlock(data);
 
-    //changing the chain
+    //changing the chain  
     blockchain2.chain[1].data = "kan";
     //checking if the chain is valid or not(genesis one)
     expect(blockchain2.isChainValidate(blockchain2.chain)).to.be.false;
   });
+
 });
