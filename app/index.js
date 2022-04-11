@@ -1,14 +1,18 @@
 const express = require("express");
 const Blockchain = require("../src");
+const P2pserver =  require('./p2p-server');
+
 const bodyParser = require("body-parser");
 
 const HTTP_PORT = process.env.HTTP_PORT || 3001;
+
 
 //important  -you can not redirect post to get request or vice versa
 
 const app = express();
 app.use(express.json());
 const blockchain = new Blockchain();
+const p2pserver =  new P2pserver(blockchain);
 
 //sending the chain
 app.get("/block", (req, res) => {
@@ -25,3 +29,4 @@ app.post("/mine", (req, res) => {
 app.listen(HTTP_PORT, () => {
   console.log(`listening on port ${HTTP_PORT}`);
 });
+p2pserver.listen();
