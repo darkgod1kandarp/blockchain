@@ -4,7 +4,7 @@ const P2pserver =  require('./p2p-server');
 
 const bodyParser = require("body-parser");
 
-const HTTP_PORT = process.env.HTTP_PORT || 3001;
+const HTTP_PORT = process.env.HTTP_PORT || 8000;
 
 
 //important  -you can not redirect post to get request or vice versa
