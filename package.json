@@ -4,15 +4,18 @@
   "description": "",
   "scripts": {
     "test": "nodemon ./node_modules/mocha/bin/mocha src/**/*.js",
-    "start": "nodemon ./app"
+    "start": "nodemon ./app",
+    "dev-test":"nodemon dev-test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
     "crypto-js": "^4.1.1",
     "express": "^4.17.3",
+    "mocha": "^9.2.2",
     "nodemon": "^2.0.15",
     "ws": "^8.5.0"
   },
